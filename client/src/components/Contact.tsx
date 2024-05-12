@@ -56,7 +56,7 @@ const Contact: React.FC<ContactProfileProps> = ({ contact }) => {
     <div>
       <h2>Contact</h2>
       <div>
-        { photoUrl != null ? <img src={photoUrl} alt="User" /> : <></>}
+        { photoUrl != null ? <img src={photoUrl} alt="Contact image" style={{ maxWidth: '500px', maxHeight: '500px' }}/> : <></>}
         <p>Name: {contact.name}</p>
         <p>Phone Number: {contact.phoneNumber}</p>
       </div>
@@ -66,7 +66,7 @@ const Contact: React.FC<ContactProfileProps> = ({ contact }) => {
         { errorText ? <span style={{ color: 'red' }}>{errorText}</span> : <></>}
       </form>
       <div>
-        { imagePreviewUrl != null ? <img src={imagePreviewUrl} alt="User" /> : <></>}
+        { imagePreviewUrl != null ? <img src={imagePreviewUrl} alt="Preview image" style={{ maxWidth: '500px', maxHeight: '500px' }} /> : <></>}
       </div>
     </div>
   );
