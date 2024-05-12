@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { API_SERVER_URL } from '../shared/constants.js'
 import { IContact } from '../shared/models/IContact.js';
+import defaultImage from '../user_profile.png';
 
 interface ContactProfileProps {
   contact: IContact;
@@ -56,7 +57,9 @@ const Contact: React.FC<ContactProfileProps> = ({ contact }) => {
     <div>
       <h2>Contact</h2>
       <div>
-        { photoUrl != null ? <img src={photoUrl} alt="Contact image" style={{ maxWidth: '500px', maxHeight: '500px' }}/> : <></>}
+        { photoUrl != null 
+          ? <img src={photoUrl} alt="Contact image" style={{ maxWidth: '500px', maxHeight: '500px', width: '100%', height: '100%' }}/> 
+          : <img src={defaultImage} alt="Contact image" style={{ maxWidth: '500px', maxHeight: '500px', width: '100%', height: '100%' }}/>}
         <p>Name: {contact.name}</p>
         <p>Phone Number: {contact.phoneNumber}</p>
       </div>
@@ -66,7 +69,7 @@ const Contact: React.FC<ContactProfileProps> = ({ contact }) => {
         { errorText ? <span style={{ color: 'red' }}>{errorText}</span> : <></>}
       </form>
       <div>
-        { imagePreviewUrl != null ? <img src={imagePreviewUrl} alt="Preview image" style={{ maxWidth: '500px', maxHeight: '500px' }} /> : <></>}
+        { imagePreviewUrl != null ? <img src={imagePreviewUrl} alt="Preview image" style={{ maxWidth: '500px', maxHeight: '500px', width: '100%', height: '100%' }} /> : <></>}
       </div>
     </div>
   );
