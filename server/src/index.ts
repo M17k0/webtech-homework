@@ -64,7 +64,7 @@ app.post("/update-contact-photo/:id", upload.single("image") , (request: Request
   const newFilePath = path.join(photoFilePath, imageName);
 
   if (!fs.existsSync(photoFilePath)) {
-    fs.mkdirSync(photoFilePath);
+    fs.mkdirSync(photoFilePath, { recursive: true});
   }
 
   let saveError = null;
