@@ -6,7 +6,6 @@ import multer from "multer"
 import cors from "cors"
 import mime from "mime"
 
-// configures dotenv to work in your application
 dotenv.config();
 const app = express();
 
@@ -85,6 +84,5 @@ function getPhotoFilePath(id: string) {
 app.listen(PORT, () => { 
   console.log("Server running at PORT: ", PORT); 
 }).on("error", (error) => {
-  // gracefully handle error
   throw new Error(error.message);
 });
